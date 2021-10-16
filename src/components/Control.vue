@@ -2,28 +2,35 @@
   <div class="relative">
     <select
       v-if="computedType === 'select'"
+      :id="id"
       v-model="computedValue"
       :name="name"
-      :id="id"
-      :class="inputElClass">
-      <option v-for="option in options" :key="option.id ?? option" :value="option">{{ option.label ?? option }}</option>
+      :class="inputElClass"
+    >
+      <option
+        v-for="option in options"
+        :key="option.id ?? option"
+        :value="option"
+      >
+        {{ option.label ?? option }}
+      </option>
     </select>
     <textarea
       v-else-if="computedType === 'textarea'"
+      :id="id"
       v-model="computedValue"
       :class="inputElClass"
       :name="name"
-      :id="id"
       :placeholder="placeholder"
       :required="required"
-    ></textarea>
+    />
     <input
       v-else
+      :id="id"
       v-model="computedValue"
       :name="name"
       :autocomplete="autocomplete"
       :required="required"
-      :id="id"
       :placeholder="placeholder"
       :type="computedType"
       :class="inputElClass"

@@ -55,7 +55,7 @@
     <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
       <div class="flex flex-col justify-between">
         <card-transaction-bar
-          v-for="(transaction,index) in transactionBarItems"
+          v-for="(transaction, index) in transactionBarItems"
           :key="index"
           :amount="transaction.amount"
           :date="transaction.date"

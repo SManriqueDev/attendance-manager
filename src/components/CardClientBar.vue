@@ -1,14 +1,28 @@
 <template>
-  <card-component class="mb-6 last:mb-0" hoverable>
+  <card-component
+    class="mb-6 last:mb-0"
+    hoverable
+  >
     <level>
       <level type="justify-start">
-        <user-avatar class="w-12 h-12 mr-6" :username="name"/>
+        <user-avatar
+          class="w-12 h-12 mr-6"
+          :username="name"
+        />
         <div class="text-center md:text-left">
-          <h4 class="text-xl">{{ name }} <span class="text-gray-500 dark:text-gray-400">@{{ login }}</span></h4>
-          <p class="text-gray-500 dark:text-gray-400">{{ date }}</p>
+          <h4 class="text-xl">
+            {{ name }} <span class="text-gray-500 dark:text-gray-400">@{{ login }}</span>
+          </h4>
+          <p class="text-gray-500 dark:text-gray-400">
+            {{ date }}
+          </p>
         </div>
       </level>
-      <pill :type="pillType" :text="pillText" :icon="pillIcon"/>
+      <pill
+        :type="pillType"
+        :text="pillText"
+        :icon="pillIcon"
+      />
     </level>
   </card-component>
 </template>

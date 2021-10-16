@@ -1,5 +1,11 @@
 <template>
-  <component :is="is" :class="componentClass" :to="to" :href="href" :exact-active-class="activeClass">
+  <component
+    :is="is"
+    :class="componentClass"
+    :to="to"
+    :href="href"
+    :exact-active-class="activeClass"
+  >
     <slot />
   </component>
 </template>

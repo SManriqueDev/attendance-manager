@@ -1,6 +1,11 @@
 <template>
   <div>
-    <img :src="avatar" :alt="name" class="rounded-full block h-auto w-full max-w-full" :class="bg" />
+    <img
+      :src="avatar"
+      :alt="name"
+      class="rounded-full block h-auto w-full max-w-full"
+      :class="bg"
+    >
   </div>
 </template>
 
@@ -24,11 +29,18 @@ export default {
   setup (props) {
     const store = useStore()
 
-    const avatar = computed(() => props.username
-      ? `https://avatars.dicebear.com/${props.api}/${props.username.replace(/[^a-z0-9]+/i, '-')}.svg`
-      : store.state.userAvatar)
+    const avatar = computed(() =>
+      props.username
+        ? `https://avatars.dicebear.com/${props.api}/${props.username.replace(
+            /[^a-z0-9]+/i,
+            '-'
+          )}.svg`
+        : store.state.userAvatar
+    )
 
-    const name = computed(() => props.username ? props.username : store.state.userName)
+    const name = computed(() =>
+      props.username ? props.username : store.state.userName
+    )
 
     return {
       name,

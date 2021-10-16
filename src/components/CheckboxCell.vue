@@ -1,8 +1,14 @@
 <template>
-  <component :is="type" class="checkbox-cell">
+  <component
+    :is="type"
+    class="checkbox-cell"
+  >
     <label class="checkbox">
-      <input type="checkbox" v-model="checked">
-      <span class="check"></span>
+      <input
+        v-model="checked"
+        type="checkbox"
+      >
+      <span class="check" />
     </label>
   </component>
 </template>

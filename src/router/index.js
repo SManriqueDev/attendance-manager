@@ -13,6 +13,17 @@ const routes = [
     component: Home
   },
   {
+    // Document title tag
+    // We combine it with defaultDocumentTitle set in `src/main.js` on router.afterEach hook
+    meta: {
+      title: 'Panel de Control'
+    },
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () =>
+      import(/* webpackChunkName: "dashboard" */ '../views/Dashboard')
+  },
+  {
     meta: {
       title: 'Tables'
     },
@@ -37,7 +48,8 @@ const routes = [
     },
     path: '/profile',
     name: 'profile',
-    component: () => import(/* webpackChunkName: "profile" */ '../views/Profile')
+    component: () =>
+      import(/* webpackChunkName: "profile" */ '../views/Profile')
   },
   {
     meta: {
@@ -46,39 +58,41 @@ const routes = [
     path: '/ui',
     name: 'ui',
     component: () => import(/* webpackChunkName: "ui" */ '../views/Ui')
-  },
-  {
-    meta: {
-      title: 'Responsive layout'
-    },
-    path: '/responsive',
-    name: 'responsive',
-    component: () => import(/* webpackChunkName: "responsive" */ '../views/Responsive')
-  },
-  {
-    meta: {
-      title: 'Login',
-      fullScreen: true
-    },
-    path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/Login')
-  },
-  {
-    meta: {
-      title: 'Error',
-      fullScreen: true
-    },
-    path: '/error',
-    name: 'error',
-    component: () => import(/* webpackChunkName: "error" */ '../views/Error')
   }
+  // {
+  //   meta: {
+  //     title: "Responsive layout"
+  //   },
+  //   path: "/responsive",
+  //   name: "responsive",
+  //   component: () =>
+  //     import(/* webpackChunkName: "responsive" */ "../views/Responsive")
+  // },
+  // {
+  //   meta: {
+  //     title: "Login",
+  //     fullScreen: true
+  //   },
+  //   path: "/login",
+  //   name: "login",
+  //   component: () => import(/* webpackChunkName: "login" */ "../views/Login")
+  // },
+  // {
+  //   meta: {
+  //     title: "Error",
+  //     fullScreen: true
+  //   },
+  //   path: "/error",
+  //   name: "error",
+  //   component: () => import(/* webpackChunkName: "error" */ "../views/Error")
+  // }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
   scrollBehavior (to, from, savedPosition) {
+    console.log('🚀 ~ file: index.js ~ line 95 ~ scrollBehavior ~ to, from', to, from)
     return savedPosition || { top: 0 }
   }
 })

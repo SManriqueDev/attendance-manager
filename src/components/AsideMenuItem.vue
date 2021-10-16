@@ -10,9 +10,19 @@
       :class="[isSubmenuList ? 'p-3 text-sm' : 'py-2']"
       @click="menuClick"
     >
-      <icon v-if="item.icon" :path="item.icon" class="flex-none" w="w-12" />
+      <icon
+        v-if="item.icon"
+        :path="item.icon"
+        class="flex-none"
+        w="w-12"
+      />
       <span class="flex-grow">{{ item.label }}</span>
-      <icon v-if="hasDropdown" :path="dropdownIcon" class="flex-none" w="w-12" />
+      <icon
+        v-if="hasDropdown"
+        :path="dropdownIcon"
+        class="flex-none"
+        w="w-12"
+      />
     </component>
     <aside-menu-list
       v-if="hasDropdown"
@@ -34,11 +44,11 @@ export default {
     AsideMenuList: defineAsyncComponent(() => import('@/components/AsideMenuList')),
     Icon
   },
-  emits: ['menu-click'],
   props: {
     item: Object,
     isSubmenuList: Boolean
   },
+  emits: ['menu-click'],
   setup (props, { emit }) {
     const isDropdownActive = ref(false)
 

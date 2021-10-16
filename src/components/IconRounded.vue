@@ -1,5 +1,12 @@
 <template>
-  <icon :path="icon" :w="w" :h="h" size="24" class="rounded-full" :class="iconStyle"/>
+  <icon
+    :path="icon"
+    :w="w"
+    :h="h"
+    size="24"
+    class="rounded-full"
+    :class="iconStyle"
+  />
 </template>
 
 <script>

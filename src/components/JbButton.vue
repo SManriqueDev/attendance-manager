@@ -1,7 +1,20 @@
 <template>
-  <component :is="is" :class="componentClass" :href="href" :type="computedType" :to="to" :target="target">
-    <icon v-if="icon" :path="icon" />
-    <span v-if="label" :class="labelClass">{{ label }}</span>
+  <component
+    :is="is"
+    :class="componentClass"
+    :href="href"
+    :type="computedType"
+    :to="to"
+    :target="target"
+  >
+    <icon
+      v-if="icon"
+      :path="icon"
+    />
+    <span
+      v-if="label"
+      :class="labelClass"
+    >{{ label }}</span>
   </component>
 </template>
 

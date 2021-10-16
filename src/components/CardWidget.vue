@@ -1,7 +1,15 @@
 <template>
   <card-component>
-    <level v-if="trend" class="mb-3" mobile>
-      <trend-pill :trend="trend" :trend-type="trendType" small />
+    <level
+      v-if="trend"
+      class="mb-3"
+      mobile
+    >
+      <trend-pill
+        :trend="trend"
+        :trend-type="trendType"
+        small
+      />
       <jb-button
         :icon="mdiCog"
         icon-w="w-4"
@@ -17,10 +25,21 @@
           {{ label }}
         </h3>
         <h1 class="text-3xl leading-tight font-semibold">
-          <growing-number :value="number" :prefix="prefix" :suffix="suffix" />
+          <growing-number
+            :value="number"
+            :prefix="prefix"
+            :suffix="suffix"
+          />
         </h1>
       </div>
-      <icon v-if="icon" :path="icon" size="48" w="" h="h-16" :class="color" />
+      <icon
+        v-if="icon"
+        :path="icon"
+        size="48"
+        w=""
+        h="h-16"
+        :class="color"
+      />
     </level>
   </card-component>
 </template>

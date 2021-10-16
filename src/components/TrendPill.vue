@@ -1,5 +1,10 @@
 <template>
-  <pill :text="trend" :type="trendStyle.style" :icon="trendStyle.icon" :small="small"/>
+  <pill
+    :text="trend"
+    :type="trendStyle.style"
+    :icon="trendStyle.icon"
+    :small="small"
+  />
 </template>
 
 <script>

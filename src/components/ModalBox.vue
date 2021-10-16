@@ -1,5 +1,8 @@
 <template>
-  <overlay v-show="value" @overlay-click="cancel">
+  <overlay
+    v-show="value"
+    @overlay-click="cancel"
+  >
     <card-component
       v-show="value"
       :title="title"
@@ -8,15 +11,30 @@
       @header-icon-click="cancel"
     >
       <div class="space-y-3">
-        <h1 v-if="largeTitle" class="text-2xl">{{ largeTitle }}</h1>
+        <h1
+          v-if="largeTitle"
+          class="text-2xl"
+        >
+          {{ largeTitle }}
+        </h1>
         <slot />
       </div>
 
       <divider />
 
       <jb-buttons>
-        <jb-button :label="buttonLabel" :color="button" @click="confirm" />
-        <jb-button v-if="hasCancel" label="Cancel" @click="cancel" :color="button" outline />
+        <jb-button
+          :label="buttonLabel"
+          :color="button"
+          @click="confirm"
+        />
+        <jb-button
+          v-if="hasCancel"
+          label="Cancel"
+          :color="button"
+          outline
+          @click="cancel"
+        />
       </jb-buttons>
     </card-component>
   </overlay>

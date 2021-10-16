@@ -9,11 +9,12 @@
         :class="{ 'rounded-r-none': file }"
       />
       <input
-        type="file"
         ref="input"
+        type="file"
         class="absolute top-0 left-0 w-full h-full opacity-0 outline-none cursor-pointer -z-1"
         :accept="accept"
-        @input="upload">
+        @input="upload"
+      >
     </label>
     <div v-if="file">
       <span class="inline-flex px-4 py-2 justify-center bg-gray-100 border-gray-200 border rounded-r">{{ file.name }}</span>
@@ -49,6 +50,15 @@ export default {
       mdiUpload
     }
   },
+  watch: {
+    modelValue (value) {
+      this.file = value
+
+      if (!value) {
+        this.$refs.input.value = null
+      }
+    }
+  },
   methods: {
     upload (event) {
       const value = event.target.files || event.dataTransfer.files
@@ -79,15 +89,6 @@ export default {
     //     (progressEvent.loaded * 100) / progressEvent.total
     //   )
     // }
-  },
-  watch: {
-    modelValue (value) {
-      this.file = value
-
-      if (!value) {
-        this.$refs.input.value = null
-      }
-    }
   }
 }
 </script>
