@@ -86,12 +86,12 @@
           </div>
 
           <template #dropdown>
-            <nav-bar-item to="/profile">
+            <!-- <nav-bar-item to="/profile">
               <nav-bar-item-label
                 :icon="mdiAccount"
                 label="My Profile"
               />
-            </nav-bar-item>
+            </nav-bar-item> -->
             <nav-bar-item>
               <nav-bar-item-label
                 :icon="mdiCogOutline"

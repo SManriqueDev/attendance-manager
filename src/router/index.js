@@ -3,19 +3,13 @@ import Home from '../views/Home'
 
 const routes = [
   {
-    // Document title tag
-    // We combine it with defaultDocumentTitle set in `src/main.js` on router.afterEach hook
-    meta: {
-      title: 'Dashboard'
-    },
+   
     path: '/',
-    name: 'home',
-    component: Home,
+    
     redirect: '/dashboard'
   },
   {
-    // Document title tag
-    // We combine it with defaultDocumentTitle set in `src/main.js` on router.afterEach hook
+   
     meta: {
       title: 'Panel de Control'
     },
