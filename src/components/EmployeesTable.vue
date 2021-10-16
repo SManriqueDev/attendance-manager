@@ -6,7 +6,7 @@
         <th />
         <th>Nombre(s)</th>
         <th>Apellido(s)</th>
-        <th>Dirección</th>
+        <th>Estado</th>
         <th>Fecha</th>
         <th />
       </tr>
@@ -23,19 +23,21 @@
         <td data-label="LastName">
           {{ employee.lastName }}
         </td>
-        <td data-label="Direction">
-          <span
+        <td class="flex justify-center"  data-label="Direction">
+          <!-- Presente -->
+          <div
             v-if="employee.nextDirection * -1 > 0"
-            class="bg-green-500 text-white rounded-xl px-3 py-1"
+            class="bg-green-500 text-white rounded-xl px-3 py-1 h-6 w-6"
           >
-            Presente
-          </span>
-           <span
+
+          </div>
+          <!-- Ausente -->
+           <div
             v-else
-            class="bg-red-500 text-white rounded-xl px-3 py-1"
+            class="bg-red-500 text-white rounded-xl px-3 py-1 h-6 w-6"
           >
-            Ausente
-          </span>
+
+          </div>
         </td>
         <td data-label="Created">
           <small
