@@ -7,7 +7,7 @@
         <th>Nombre(s)</th>
         <th>Apellido(s)</th>
         <th>Estado</th>
-        <th>Fecha</th>
+       
         <th />
       </tr>
     </thead>
@@ -33,7 +33,7 @@
           {{ employee.lastName }}
         </td>
         <td
-          class="flex justify-center"
+          class="flex justify-start"
           data-label="Direction"
         >
           <!-- Presente -->
@@ -46,12 +46,6 @@
             v-else
             class="bg-red-500 text-white rounded-xl px-3 py-1 h-6 w-6"
           />
-        </td>
-        <td data-label="Created">
-          <small
-            class="text-gray-500 dark:text-gray-400"
-            :title="employee.createdAt"
-          >{{ employee.createdAt }}</small>
         </td>
       </tr>
     </tbody>
@@ -101,7 +95,7 @@ export default {
 
     const darkMode = computed(() => store.state.darkMode)
 
-    const items = computed(() => store.state.employees)
+    const items = computed(() => store.state.employee.employees)
 
     const isModalActive = ref(false)
 

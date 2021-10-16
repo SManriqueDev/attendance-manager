@@ -29,7 +29,7 @@
           />
         </div>
       </div>
-      <div class="flex flex-col justify-between">
+      <div class="flex flex-col justify-start">
         <title-sub-bar
           :icon="mdiAccountMultiple"
           title="Empleados"
@@ -48,7 +48,7 @@
 
 <script>
 // @ is an alias to /src
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useStore } from "vuex";
 import {
   mdiAccountMultiple,
@@ -84,6 +84,11 @@ export default {
     const titleStack = ref(["Admin", "Dashboard"]);
     const employeesBarItems = computed(() => store.state.clients.slice(0, 5));
     const darkMode = computed(() => store.state.darkMode);
+
+    onMounted(()=>{
+      console.log('Entro');
+      store.dispatch("employee/getAllEmployees");
+    })
 
     return {
       titleStack,

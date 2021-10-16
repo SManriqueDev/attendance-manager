@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import employee from './employee'
 
 export default createStore({
   state: {
@@ -101,5 +102,6 @@ export default createStore({
     }
   },
   modules: {
+    employee: employee,
   }
 })
