@@ -1,0 +1,74 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "firstName": "Brennan",
+            "lastName": "Horne",
+            "createdAt": "2021-09-04T04:18:03 +05:00",
+            "nextDirection": 1
+        },
+        {
+            "id": 1,
+            "firstName": "Coleen",
+            "lastName": "Stephenson",
+            "createdAt": "2015-01-05T12:33:58 +05:00",
+            "nextDirection": 1
+        },
+        {
+            "id": 2,
+            "firstName": "Winnie",
+            "lastName": "Browning",
+            "createdAt": "2018-07-21T02:51:29 +05:00",
+            "nextDirection": -1
+        },
+        {
+            "id": 3,
+            "firstName": "Justine",
+            "lastName": "Calderon",
+            "createdAt": "2019-02-07T09:57:40 +05:00",
+            "nextDirection": -1
+        },
+        {
+            "id": 4,
+            "firstName": "Stevenson",
+            "lastName": "Dorsey",
+            "createdAt": "2019-07-13T11:25:59 +05:00",
+            "nextDirection": 1
+        },
+        {
+            "id": 5,
+            "firstName": "Hewitt",
+            "lastName": "Hayden",
+            "createdAt": "2014-05-29T01:38:06 +05:00",
+            "nextDirection": -1
+        },
+        {
+            "id": 6,
+            "firstName": "Vicky",
+            "lastName": "Valencia",
+            "createdAt": "2019-06-20T05:35:00 +05:00",
+            "nextDirection": 1
+        },
+        {
+            "id": 7,
+            "firstName": "Susanna",
+            "lastName": "Stanley",
+            "createdAt": "2015-11-20T07:47:42 +05:00",
+            "nextDirection": -1
+        },
+        {
+            "id": 8,
+            "firstName": "Genevieve",
+            "lastName": "Larson",
+            "createdAt": "2014-02-25T04:51:43 +05:00",
+            "nextDirection": 1
+        },
+        {
+            "id": 9,
+            "firstName": "Potter",
+            "lastName": "Copeland",
+            "createdAt": "2015-04-20T12:24:41 +05:00",
+            "nextDirection": 1
+        }
+    ]
+}
