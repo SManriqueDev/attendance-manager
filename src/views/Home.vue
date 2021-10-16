@@ -8,13 +8,13 @@
     >
       Please star this project on
       <a
-        href="https://github.com/justboil/admin-one-vue-tailwind"
+        href="https://github.com/justboil/attendance-manager"
         class="underline"
         target="_blank"
       >GitHub</a>
       <template #right>
         <jb-button
-          href="https://github.com/justboil/admin-one-vue-tailwind"
+          href="https://github.com/justboil/attendance-manager"
           :icon="mdiGithub"
           :outline="darkMode"
           label="GitHub"

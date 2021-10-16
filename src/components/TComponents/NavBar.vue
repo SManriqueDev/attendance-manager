@@ -125,7 +125,7 @@
           />
         </nav-bar-item>
         <nav-bar-item
-          href="https://github.com/justboil/admin-one-vue-tailwind"
+          href="https://github.com/justboil/attendance-manager"
           has-divider
           is-desktop-icon-only
         >

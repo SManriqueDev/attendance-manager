@@ -12,7 +12,7 @@
         </li>
       </ul>
       <jb-button
-        href="https://github.com/justboil/admin-one-vue-tailwind"
+        href="https://github.com/justboil/attendance-manager"
         color="info"
         label="Star on GitHub"
         target="_blank"

@@ -3,7 +3,7 @@
     <h1 class="flex items-center justify-center flex-col md:flex-row text-2xl text-gray-500 dark:text-gray-400 mb-12">
       <span class="md:mr-3">Please star this project on</span>
       <a
-        href="https://github.com/justboil/admin-one-vue-tailwind"
+        href="https://github.com/justboil/attendance-manager"
         class="inline-flex items-center justify-center text-blue-500"
         target="_blank"
       >
