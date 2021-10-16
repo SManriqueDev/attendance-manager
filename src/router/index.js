@@ -22,76 +22,13 @@ const routes = [
     name: 'dashboard',
     component: () =>
       import(/* webpackChunkName: "dashboard" */ '../views/Dashboard')
-  },
-  {
-    meta: {
-      title: 'Tables'
-    },
-    path: '/tables',
-    name: 'tables',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "tables" */ '../views/Tables')
-  },
-  {
-    meta: {
-      title: 'Forms'
-    },
-    path: '/forms',
-    name: 'forms',
-    component: () => import(/* webpackChunkName: "forms" */ '../views/Forms')
-  },
-  {
-    meta: {
-      title: 'Profile'
-    },
-    path: '/profile',
-    name: 'profile',
-    component: () =>
-      import(/* webpackChunkName: "profile" */ '../views/Profile')
-  },
-  {
-    meta: {
-      title: 'Ui'
-    },
-    path: '/ui',
-    name: 'ui',
-    component: () => import(/* webpackChunkName: "ui" */ '../views/Ui')
   }
-  // {
-  //   meta: {
-  //     title: "Responsive layout"
-  //   },
-  //   path: "/responsive",
-  //   name: "responsive",
-  //   component: () =>
-  //     import(/* webpackChunkName: "responsive" */ "../views/Responsive")
-  // },
-  // {
-  //   meta: {
-  //     title: "Login",
-  //     fullScreen: true
-  //   },
-  //   path: "/login",
-  //   name: "login",
-  //   component: () => import(/* webpackChunkName: "login" */ "../views/Login")
-  // },
-  // {
-  //   meta: {
-  //     title: "Error",
-  //     fullScreen: true
-  //   },
-  //   path: "/error",
-  //   name: "error",
-  //   component: () => import(/* webpackChunkName: "error" */ "../views/Error")
-  // }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     console.log('🚀 ~ file: index.js ~ line 95 ~ scrollBehavior ~ to, from', to, from)
     return savedPosition || { top: 0 }
   }

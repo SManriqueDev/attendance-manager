@@ -133,19 +133,19 @@ import {
   mdiGithub,
   mdiChartPie
 } from '@mdi/js'
-import * as chartConfig from '@/components/Charts/chart.config'
-import LineChart from '@/components/Charts/LineChart'
-import MainSection from '@/components/MainSection'
-import TitleBar from '@/components/TitleBar'
-import HeroBar from '@/components/HeroBar'
-import CardWidget from '@/components/CardWidget'
-import CardComponent from '@/components/CardComponent'
-import ClientsTable from '@/components/ClientsTable'
-import Notification from '@/components/Notification'
-import JbButton from '@/components/JbButton'
-import CardTransactionBar from '@/components/CardTransactionBar'
-import CardClientBar from '@/components/CardClientBar'
-import TitleSubBar from '@/components/TitleSubBar'
+import * as chartConfig from '@/components/TComponents/Charts/chart.config'
+import LineChart from '@/components/TComponents/Charts/LineChart'
+import MainSection from '@/components/TComponents/MainSection'
+import TitleBar from '@/components/TComponents/TitleBar'
+import HeroBar from '@/components/TComponents/HeroBar'
+import CardWidget from '@/components/TComponents/CardWidget'
+import CardComponent from '@/components/TComponents/CardComponent'
+import ClientsTable from '@/components/TComponents/ClientsTable'
+import Notification from '@/components/TComponents/Notification'
+import JbButton from '@/components/TComponents/JbButton'
+import CardTransactionBar from '@/components/TComponents/CardTransactionBar'
+import CardClientBar from '@/components/TComponents/CardClientBar'
+import TitleSubBar from '@/components/TComponents/TitleSubBar'
 
 export default {
   name: 'Home',
