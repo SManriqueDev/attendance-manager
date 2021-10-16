@@ -12,10 +12,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="employee in itemsPaginated" :key="employee.id">
-        <checkbox-cell v-if="checkable" @checked="checked($event, employee)" />
+      <tr
+        v-for="employee in itemsPaginated"
+        :key="employee.id"
+      >
+        <checkbox-cell
+          v-if="checkable"
+          @checked="checked($event, employee)"
+        />
         <td class="image-cell">
-          <user-avatar :username="employee.firstName" class="image" />
+          <user-avatar
+            :username="employee.firstName"
+            class="image"
+          />
         </td>
         <td data-label="FirstName">
           {{ employee.firstName }}
@@ -23,28 +32,26 @@
         <td data-label="LastName">
           {{ employee.lastName }}
         </td>
-        <td class="flex justify-center"  data-label="Direction">
+        <td
+          class="flex justify-center"
+          data-label="Direction"
+        >
           <!-- Presente -->
           <div
             v-if="employee.nextDirection * -1 > 0"
             class="bg-green-500 text-white rounded-xl px-3 py-1 h-6 w-6"
-          >
-
-          </div>
+          />
           <!-- Ausente -->
-           <div
+          <div
             v-else
             class="bg-red-500 text-white rounded-xl px-3 py-1 h-6 w-6"
-          >
-
-          </div>
+          />
         </td>
         <td data-label="Created">
           <small
             class="text-gray-500 dark:text-gray-400"
             :title="employee.createdAt"
-            >{{ employee.createdAt }}</small
-          >
+          >{{ employee.createdAt }}</small>
         </td>
       </tr>
     </tbody>

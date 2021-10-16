@@ -1,20 +1,16 @@
 module.exports = {
-  root: true,
-  env: {
-    node: true
-  },
   extends: [
-    // 'plugin:vue/vue3-recommended'
-    'plugin:vue/vue3-essential',
-    '@vue/standard'
+    // add more generic rulesets here, such as:
+    // 'eslint:recommended',
+    'plugin:vue/vue3-recommended'
+    // 'plugin:vue/vue3-essential', // This option doesn't impose formatting rules
+    // 'plugin:vue/vue3-strongly-recommended', // This option imposes formatting rules on your code to improve readability
   ],
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
   rules: {
-    // 'vue/require-default-prop': 'off',
-    // 'vue/require-prop-types': 'off',
-    // 'vue/require-explicit-emits': 'off'
-    'space-before-function-paren': 'off'
+    // override/add rules settings here, such as:
+    // 'vue/no-unused-vars': 'error'
+    'vue/require-default-prop': 'off',
+    'vue/require-prop-types': 'off',
+    'vue/require-explicit-emits': 'off',
   }
 }
