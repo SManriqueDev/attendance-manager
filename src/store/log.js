@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   namespaced: true,
@@ -9,17 +9,23 @@ export default {
     setLogs(state, payload) {
       state.logs = payload;
     },
+    addLog(state, payload) {
+      state.logs.unshift(payload);
+    },
   },
   actions: {
     getAllLogs({ commit }, payload) {
       axios
-        .get("http://localhost:3000/logs")
+        .get('http://localhost:3000/logs')
         .then((r) => {
-          commit("setLogs", r.data);
+          commit('setLogs', r.data);
         })
         .catch((error) => {
           alert(error.message);
         });
+    },
+    SOCKET_LOGS_logCreated({ commit }, payload) {
+      commit('addLog', payload);
     },
   },
 };
