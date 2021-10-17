@@ -1,5 +1,5 @@
 <template>
-  <nav-bar />
+  <!-- <nav-bar /> -->
   <aside-menu :menu="menu" />
   <router-view />
   <!-- <footer-bar /> -->
@@ -15,7 +15,7 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import menu from '@/menu.js'
-import NavBar from '@/components/TComponents/NavBar'
+// import NavBar from '@/components/TComponents/NavBar'
 import AsideMenu from '@/components/TComponents/AsideMenu'
 import Overlay from '@/components/TComponents/Overlay'
 
@@ -24,7 +24,7 @@ export default {
   components: {
     Overlay,
     AsideMenu,
-    NavBar
+    // NavBar
   },
   setup () {
     const store = useStore()

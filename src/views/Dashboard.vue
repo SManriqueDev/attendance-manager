@@ -19,13 +19,10 @@
           title="Registros"
         />
         <div class="flex flex-col justify-between overflow-auto h-96">
-          <card-client-bar
-            v-for="client in employeesBarItems"
-            :key="client.id"
-            :name="client.name"
-            :login="client.login"
-            :date="client.created"
-            :progress="client.progress"
+          <card-log-bar
+            v-for="log in logsBarItems"
+            :key="log.id"
+            :log="log"
           />
         </div>
       </div>
@@ -65,7 +62,7 @@ import TitleBar from "@/components/TComponents/TitleBar";
 import HeroBar from "@/components/TComponents/HeroBar";
 import CardComponent from "@/components/TComponents/CardComponent";
 import EmployeesTable from "@/components/EmployeesTable";
-import CardClientBar from "@/components/TComponents/CardClientBar";
+import CardLogBar from "@/components/CardLogBar";
 import TitleSubBar from "@/components/TComponents/TitleSubBar";
 
 export default {
@@ -77,22 +74,23 @@ export default {
     CardComponent,
     HeroBar,
     TitleBar,
-    CardClientBar,
+    CardLogBar,
   },
   setup() {
     const store = useStore();
     const titleStack = ref(["Admin", "Dashboard"]);
-    const employeesBarItems = computed(() => store.state.clients.slice(0, 5));
+    const logsBarItems = computed(()=>store.state.log.logs)
     const darkMode = computed(() => store.state.darkMode);
 
-    onMounted(()=>{
-      console.log('Entro');
+    onMounted(() => {
+      
       store.dispatch("employee/getAllEmployees");
-    })
+      store.dispatch("log/getAllLogs");
+    });
 
     return {
       titleStack,
-      employeesBarItems,
+      logsBarItems,
       darkMode,
 
       // Icons

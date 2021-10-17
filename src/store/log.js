@@ -3,24 +3,26 @@ import axios from 'axios'
 export default {
     namespaced: true,
     state: () => ({
-        employees: [],
+        logs: [],
     }),
     mutations: {
 
-        setEmployees(state, payload) {
-            state.employees = payload
+        setLogs(state, payload) {
+            state.logs = payload
         },
 
 
     },
     actions: {
-        getAllEmployees({ commit }, payload) {
+
+
+        getAllLogs({ commit }, payload) {
 
             axios
-                .get('http://localhost:3000/employees')
+                .get('http://localhost:3000/logs')
                 .then((r) => {
 
-                    commit('setEmployees', r.data)
+                    commit('setLogs', r.data)
                 })
                 .catch(error => {
                     alert(error.message)

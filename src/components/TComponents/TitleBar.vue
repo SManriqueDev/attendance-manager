@@ -11,13 +11,13 @@
           {{ title }}
         </li>
       </ul>
-      <jb-button
+      <!-- <jb-button
         href="https://github.com/justboil/attendance-manager"
         color="info"
         label="Star on GitHub"
         target="_blank"
         :icon="mdiGithub"
-      />
+      /> -->
     </level>
   </section>
 </template>
@@ -25,13 +25,12 @@
 <script>
 import { mdiGithub } from '@mdi/js'
 import Level from '@/components/TComponents/Level'
-import JbButton from '@/components/TComponents/JbButton'
 
 export default {
   name: 'TitleBar',
   components: {
     Level,
-    JbButton
+    
   },
   props: {
     titleStack: {

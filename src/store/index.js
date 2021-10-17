@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 import employee from './employee'
-
+import log from './log'
 export default createStore({
   state: {
     /* User */
@@ -25,12 +25,12 @@ export default createStore({
   },
   mutations: {
     /* A fit-them-all commit */
-    basic (state, payload) {
+    basic(state, payload) {
       state[payload.key] = payload.value
     },
 
     /* User */
-    user (state, payload) {
+    user(state, payload) {
       if (payload.name) {
         state.userName = payload.name
       }
@@ -43,7 +43,7 @@ export default createStore({
     }
   },
   actions: {
-    asideMobileToggle ({ commit, state }, payload = null) {
+    asideMobileToggle({ commit, state }, payload = null) {
       const isShow = payload !== null ? payload : !state.isAsideMobileExpanded
 
       document.getElementById('app').classList[isShow ? 'add' : 'remove']('ml-60')
@@ -56,17 +56,17 @@ export default createStore({
       })
     },
 
-    asideLgToggle ({ commit, state }, payload = null) {
+    asideLgToggle({ commit, state }, payload = null) {
       commit('basic', { key: 'isAsideLgActive', value: payload !== null ? payload : !state.isAsideLgActive })
     },
 
-    fullScreenToggle ({ commit, state }, value) {
+    fullScreenToggle({ commit, state }, value) {
       commit('basic', { key: 'isFullScreen', value })
 
       document.documentElement.classList[value ? 'add' : 'remove']('full-screen')
     },
 
-    darkMode ({ commit, state }) {
+    darkMode({ commit, state }) {
       const value = !state.darkMode
 
       document.documentElement.classList[value ? 'add' : 'remove']('dark')
@@ -77,7 +77,7 @@ export default createStore({
       })
     },
 
-    fetch ({ commit }, payload) {
+    fetch({ commit }, payload) {
       axios
         .get(`data-sources/${payload}.json`)
         .then((r) => {
@@ -102,6 +102,7 @@ export default createStore({
     }
   },
   modules: {
-    employee: employee,
+    employee,
+    log,
   }
 })

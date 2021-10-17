@@ -26,7 +26,7 @@
       </nav-bar-item>
       <nav-bar-item>
         <control
-          placeholder="Search everywhere..."
+          placeholder="Buscar..."
           transparent
           borderless
         />
