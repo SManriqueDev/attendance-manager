@@ -1,7 +1,7 @@
-import { createStore } from 'vuex'
-import axios from 'axios'
-import employee from './employee'
-import log from './log'
+import { createStore } from "vuex";
+import axios from "axios";
+import employee from "./employee";
+import log from "./log";
 export default createStore({
   state: {
     /* User */
@@ -21,60 +21,69 @@ export default createStore({
 
     /* Sample data (commonly used) */
     clients: [],
-    history: []
+    history: [],
   },
   mutations: {
     /* A fit-them-all commit */
     basic(state, payload) {
-      state[payload.key] = payload.value
+      state[payload.key] = payload.value;
     },
 
     /* User */
     user(state, payload) {
       if (payload.name) {
-        state.userName = payload.name
+        state.userName = payload.name;
       }
       if (payload.email) {
-        state.userEmail = payload.email
+        state.userEmail = payload.email;
       }
       if (payload.avatar) {
-        state.userAvatar = payload.avatar
+        state.userAvatar = payload.avatar;
       }
-    }
+    },
   },
   actions: {
     asideMobileToggle({ commit, state }, payload = null) {
-      const isShow = payload !== null ? payload : !state.isAsideMobileExpanded
+      const isShow = payload !== null ? payload : !state.isAsideMobileExpanded;
 
-      document.getElementById('app').classList[isShow ? 'add' : 'remove']('ml-60')
+      document
+        .getElementById("app")
+        .classList[isShow ? "add" : "remove"]("ml-60");
 
-      document.documentElement.classList[isShow ? 'add' : 'remove']('m-clipped')
+      document.documentElement.classList[isShow ? "add" : "remove"](
+        "m-clipped"
+      );
 
-      commit('basic', {
-        key: 'isAsideMobileExpanded',
-        value: isShow
-      })
+      commit("basic", {
+        key: "isAsideMobileExpanded",
+        value: isShow,
+      });
     },
 
     asideLgToggle({ commit, state }, payload = null) {
-      commit('basic', { key: 'isAsideLgActive', value: payload !== null ? payload : !state.isAsideLgActive })
+      commit("basic", {
+        key: "isAsideLgActive",
+        value: payload !== null ? payload : !state.isAsideLgActive,
+      });
     },
 
     fullScreenToggle({ commit, state }, value) {
-      commit('basic', { key: 'isFullScreen', value })
+      commit("basic", { key: "isFullScreen", value });
 
-      document.documentElement.classList[value ? 'add' : 'remove']('full-screen')
+      document.documentElement.classList[value ? "add" : "remove"](
+        "full-screen"
+      );
     },
 
     darkMode({ commit, state }) {
-      const value = !state.darkMode
+      const value = !state.darkMode;
 
-      document.documentElement.classList[value ? 'add' : 'remove']('dark')
+      document.documentElement.classList[value ? "add" : "remove"]("dark");
 
-      commit('basic', {
-        key: 'darkMode',
-        value
-      })
+      commit("basic", {
+        key: "darkMode",
+        value,
+      });
     },
 
     fetch({ commit }, payload) {
@@ -83,26 +92,26 @@ export default createStore({
         .then((r) => {
           if (r.data) {
             if (r.data.data) {
-              commit('basic', {
+              commit("basic", {
                 key: payload,
-                value: r.data.data
-              })
+                value: r.data.data,
+              });
             }
             if (r.data.status) {
-              commit('basic', {
+              commit("basic", {
                 key: `${payload}Status`,
-                value: r.data.status
-              })
+                value: r.data.status,
+              });
             }
           }
         })
-        .catch(error => {
-          alert(error.message)
-        })
-    }
+        .catch((error) => {
+          alert(error.message);
+        });
+    },
   },
   modules: {
     employee,
     log,
-  }
-})
+  },
+});
