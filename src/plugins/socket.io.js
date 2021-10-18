@@ -4,7 +4,7 @@ import SocketIO from 'socket.io-client';
 
 export default new VueSocketIO({
   debug: true,
-  connection: SocketIO('http://localhost:3000/logs'),
+  connection: SocketIO('https://attendance-system-back.herokuapp.com/logs'),
   vuex: {
     store,
     actionPrefix: 'SOCKET_LOGS_',
