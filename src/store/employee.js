@@ -22,7 +22,7 @@ export default {
   actions: {
     getAllEmployees({ commit }, payload) {
       axios
-        .get('https://attendance-system-back.herokuapp.com/employees')
+        .get('https://attendance-system-api-d4d55f8107e2.herokuapp.com/employees')
         .then((r) => {
           commit('setEmployees', r.data);
         })
