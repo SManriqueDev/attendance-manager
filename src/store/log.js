@@ -16,7 +16,7 @@ export default {
   actions: {
     getAllLogs({ commit }, payload) {
       axios
-        .get('https://attendance-system-api-d4d55f8107e2.herokuapp.com/logs')
+        .get('https://attendance-system-back-be7ef11e38c6.herokuapp.com/logs')
         .then((r) => {
           commit('setLogs', r.data);
         })
