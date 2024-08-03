@@ -22,7 +22,7 @@ export default {
   actions: {
     getAllEmployees({ commit }, payload) {
       axios
-        .get('https://attendance-system-back-be7ef11e38c6.herokuapp.com/employees')
+        .get('https://as-api.sebastian-manrique.me/employees')
         .then((r) => {
           commit('setEmployees', r.data);
         })
